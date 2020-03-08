@@ -6,6 +6,15 @@ Rect::Rect(int top, int left, int bottom, int right) : x1(left), y1(top), x2(rig
 
 }
 
+Rect::Rect(Rect& r) : x1(r.getX1()), y1(r.getY1()), x2(r.getX2()), y2(r.getY2())
+{
+
+}
+
+Rect::~Rect()
+{
+}
+
 const int& Rect::getX1()
 {
 	return x1;

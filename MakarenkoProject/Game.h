@@ -5,10 +5,9 @@
 class Game
 {
 private:
-	bool _exit = false;
 	GameState _gstate;
 public:
-	Game(int width, int height);
+	Game(int width, int height, int tileWidth);
 	void run();
 };
 

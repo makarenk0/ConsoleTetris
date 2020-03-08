@@ -3,7 +3,7 @@
 
 
 
-Game::Game(int width, int height) : _gstate(GameState(width, height))
+Game::Game(int width, int height, int tileWidth) : _gstate(GameState(width, height, tileWidth))
 {
 	
 }
@@ -11,10 +11,10 @@ Game::Game(int width, int height) : _gstate(GameState(width, height))
 void Game::run()
 {
 	float newTime, frameTime, interpolation;
-	const float dt = 1.0f / 60.0f;
+	const float dt = 1.0f / 10.0f;
 	float currentTime = clock() / CLOCKS_PER_SEC;
 	float accumulator = 0.0f;
-	while (!_exit) {
+	while (!_gstate._exit) {
 		newTime = clock()*1.0 / CLOCKS_PER_SEC;
 		frameTime = newTime - currentTime;
 
